@@ -30,6 +30,23 @@ db.sequelize.sync();
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
+// app.get("/user-reg", (res) => {
+//   res.body("<form method='post'><input name='user'></form>")
+// })
+app.get('/user-reg', function (req, res) {
+  res.send('<html><body>' +
+      '<form action="/api/auth/signup" method=\'post\'><hr>' +
+      'User name: <input name=\'username\'></br>' +
+      'Email: <input name=\'email\'><br>' +
+      'Role: <select name="roles" id="roles" multiple>\n' +
+      '  <option value="user">User</option>\n' +
+      '  <option value="moderator">Moderator</option>\n' +
+      '  <option value="admin">Admin</option>\n' +
+      '</select><br>' +
+      'Password: <input name=\'password\'><hr>' +
+      '<input type="submit" value="Register"/></form>' +
+      '</body></html>');
+});
 
 // routes
 require('./app/routes/auth.routes')(app);

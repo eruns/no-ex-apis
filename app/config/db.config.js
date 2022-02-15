@@ -1,8 +1,8 @@
 module.exports = {
   HOST: "localhost",
-  USER: "root",
-  PASSWORD: "123456",
-  DB: "testdb",
+  USER: "node1",
+  PASSWORD: "parola",
+  DB: "node_react_express",
   dialect: "mysql",
   pool: {
     max: 5,
