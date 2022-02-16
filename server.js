@@ -8,12 +8,18 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
+// *** Start File Upload ***
+global.__basedir = __dirname;
+const initRoutes = require("./app/routes");
+// *** End File Upload ***
+q
 // parse requests of content-type - application/json
 app.use(express.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
+initRoutes(app); // E.L. - adding img upload
 
 // database
 const db = require("./app/models");
