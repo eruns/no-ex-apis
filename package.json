@@ -1,7 +1,7 @@
 {
-  "name": "node-js-jwt-auth",
+  "name": "node-js-jwt-auth + node-js-express-upload-download-files",
   "version": "1.0.0",
-  "description": "Node.js Demo for JWT Authentication",
+  "description": "Node.js Demo for JWT Authentication + Node.js Express Rest APis to Upload/Download Files",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,12 @@
     "jwt",
     "authentication",
     "express",
-    "mysql"
+    "mysql",
+    "upload",
+    "download",
+    "file",
+    "multipart",
+    "rest api"
   ],
   "author": "bezkoder",
   "license": "ISC",
