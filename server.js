@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:8888" // E.L.
 };
 
 app.use(cors(corsOptions));
@@ -12,7 +12,7 @@ app.use(cors(corsOptions));
 global.__basedir = __dirname;
 const initRoutes = require("./app/routes");
 // *** End File Upload ***
-q
+
 // parse requests of content-type - application/json
 app.use(express.json());
 
@@ -25,12 +25,12 @@ initRoutes(app); // E.L. - adding img upload
 const db = require("./app/models");
 const Role = db.role;
 
-db.sequelize.sync();
+// db.sequelize.sync();
 // force: true will drop the table if it already exists
-// db.sequelize.sync({force: true}).then(() => {
-//   console.log('Drop and Resync Database with { force: true }');
-//   initial();
-// });
+db.sequelize.sync({force: true}).then(() => {
+  console.log('Drop and Resync Database with { force: true }');
+  initial();
+});
 
 // simple route
 app.get("/", (req, res) => {
